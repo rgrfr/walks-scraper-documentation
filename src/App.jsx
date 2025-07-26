@@ -753,12 +753,12 @@ if __name__ == "__main__":
           </p>
           <CodeBlock language="yaml" title="docker-compose.yml">
             {`services:
-  ramblers-scraper:
+  hikers-scraper:
     build: .
     volumes:
       # Example: Mount a local directory for logs or other data
       - /path/to/your/local/logs:/app/logs
-    container_name: ramblers-scraper
+    container_name: hikers-scraper
     environment:
       # These are examples if you were to pass credentials directly to Python
       # DB_HOST: "your_db_host_example.com"
@@ -776,7 +776,7 @@ if __name__ == "__main__":
             {`docker compose build`}
           </CodeBlock>
           <CodeBlock language="bash" title="Run Scraper (removes container after exit)">
-            {`docker compose run --rm ramblers-scraper`}
+            {`docker compose run --rm hikers-scraper`}
           </CodeBlock>
         </DocSection>
 
@@ -787,7 +787,7 @@ if __name__ == "__main__":
           <h4 className="font-semibold text-gray-700 mb-1">Cron Entry:</h4>
           <CodeBlock language="bash" title="crontab -e entry">
             {`# Run Hikers Scraper daily at 3:00 AM
-0 3 * * * /usr/bin/docker compose -f /root/ramblers-scraper/docker-compose.yml run --rm ramblers-scraper > /var/log/ramblers_scraper_cron.log 2>&1`}
+0 3 * * * /usr/bin/docker compose -f /root/hikers-scraper/docker-compose.yml run --rm hikers-scraper > /var/log/ramblers_scraper_cron.log 2>&1`}
           </CodeBlock>
           <p className="mt-2">
             <strong>Action:</strong> Add this line to your crontab (<code>crontab -e</code>). Ensure the paths to `docker compose` and `docker-compose.yml` are absolute and correct for your server.
@@ -815,8 +815,8 @@ if __name__ == "__main__":
           </p>
           <ul className="list-disc list-inside space-y-1">
             <li><strong>PHP Error Logs (Ionos):</strong> This is your primary source for diagnosing `500 Server Errors` from your PHP API. Log into your Ionos control panel to access these.</li>
-            <li><strong>Scraper Console Output:</strong> Check the output when running `docker compose run ramblers-scraper` manually.</li>
-            <li><strong>Cron Log File:</strong> Examine `/var/log/ramblers_scraper_cron.log` for output from scheduled runs.</li>
+            <li><strong>Scraper Console Output:</strong> Check the output when running `docker compose run hikers-scraper` manually.</li>
+            <li><strong>Cron Log File:</strong> Examine `/var/log/hikers_scraper_cron.log` for output from scheduled runs.</li>
             <li><strong>Database Content:</strong> Verify data directly in phpMyAdmin.</li>
           </ul>
         </DocSection>
