@@ -1,6 +1,6 @@
 # **Website scraper & API project**
 
-This repository contains the backend components for a project designed to automatically scrape eg walk data from a Hikers website, store it in a MySQL database, and expose it via a PHP API. This setup is ideal for developers looking to build a dynamic frontend application that displays up-to-date hiking event information.
+This repository explains the backend components for a project designed to automatically scrape eg walk data from a Hikers website, store it in a MySQL database, and expose it via a PHP API. This setup is for developers looking to build a dynamic frontend application that displays up-to-date hiking event information. Once the scraper is functional, and if you're as lazy as I am, Lovable.dev might be used to create a frontend.
 
 ## **🚀 View the Live Documentation**
 
